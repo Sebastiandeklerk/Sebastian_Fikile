@@ -1,20 +1,4 @@
-##' Download MODIS NDVI data
-##' @param URL  web address where data is located
-##'
-## 1) How I really did it. For the prac we'll use option 2 because it's faster
-## library("MODISTools") #Call R library MODISTools that allows us to download MODIS satellite data directly into R
-##
-## ndvi <- mt_subset(product = "MOD13Q1",
-##                         lat = -34.100875,
-##                         lon = 18.449375,
-##                         band = "250m_16_days_NDVI",
-##                         start = "2000-01-01",
-##                         end = "2021-10-01",
-##                         progress = FALSE)
-##
-
-## 2) How we'll do it for the prac: Read the data from a .csv file in my github repository for the course notes
-##
+#Read data from online .csv file
 download.NDVI <- function(URL) {
 
   # Wrap function in an if/else loop that checks if the URL is valid
