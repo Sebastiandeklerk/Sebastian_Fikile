@@ -379,7 +379,13 @@ plot.NDVI(dat)</code></pre>
 satellite saturates with time since fire. Why do you think it saturates
 rather than increasing linearly with time?</p>
 <blockquote>
-<p><em>Answer 1:</em></p>
+<p><em>Answer 1:</em> It saturates because Fynbos has very nutrient-poor
+soils, so after a fire there is an initial increase in greenness/NDVI.
+After some time, this increase in greenness is limited by the soil and
+other properties in Fynbos so it can’t get any greener or grow any more.
+Fynbos is also supposed to burn and plants incorporate fire into their
+life history strategies like dispersal, so as the postfire age increases
+then dispersal is hindered.</p>
 </blockquote>
 <p><br></p>
 </div>
@@ -460,7 +466,12 @@ summary(fit_negexpS)</code></pre>
 <p>Lots more parameters…</p>
 <p>Q2: How do the estimates for the common parameters compare?</p>
 <blockquote>
-<p><em>Answer 2:</em></p>
+<p><em>Answer 2:</em> The simpler model has a higher estimate for alpha
+(0.25) than the more complex model (0.21). The complex model has a
+higher value for gamma (0.36) than the simpler model (0.32). The lambda
+for the simpler model is almost 0.2 larger than the more complex model
+(1.17&gt;0.99). So the two models have different estimates for alpha,
+gamma and lamda.</p>
 </blockquote>
 <p><br></p>
 </div>
@@ -489,12 +500,18 @@ p-value.</p>
 <p><br></p>
 <p>Q3: Which model is better?</p>
 <blockquote>
-<p><em>Answer 3:</em></p>
+<p><em>Answer 3:</em> Model 2 is better because with the inclusion of 2
+more parameters (phi and A) and a more complex model, it reduces the
+residual sum of squares from 0.72 to 0.45. Model 1 is a subset of model
+2 and there is a significant difference between model 1 and model 2
+(F=39.21, p&lt;0.005).</p>
 </blockquote>
 <p>Q4: How many degrees of freedom are there in this ANOVA and why
 (i.e. what are they)?</p>
 <blockquote>
-<p><em>Answer 4:</em></p>
+<p><em>Answer 4:</em> There’s a total of 268 degrees of freedom for this
+ANOVA. 135 degrees of freedom for model 1 and 133 degrees of freedom for
+model 2.</p>
 </blockquote>
 <p><br></p>
 </div>
@@ -605,7 +622,11 @@ significantly different at an <span class="math inline">\(\alpha\)</span> of <sp
 <p><br></p>
 <p>Q5: Is there a preferred model and if so, which one?</p>
 <blockquote>
-<p><em>Answer 5:</em></p>
+<p><em>Answer 5:</em> Model 2 or the more complex/full is preferred. A
+lower AIC is better and clearly the change in AIC from simple minus full
+= 266957.8. AIC of the full model has a larger difference than 3 from
+the simple model and so the models are significantly different. Model 2
+has a smaller AIC value and is the better model.</p>
 </blockquote>
 <p><br></p>
 <p>The nice thing about AIC is that the models you compare do not have
@@ -623,7 +644,13 @@ MLE models…</p>
 the AIC of the MLE models? Hint: type <code>?AIC</code> into the R
 console and do some reading.</p>
 <blockquote>
-<p><em>Answer 6:</em></p>
+<p><em>Answer 6:</em> AIC uses log-likelihood and the LogLik function
+and in AIC the log-likelihood has been maximized. NLS or Normal least
+squeares are normal response variables and data models with residuals
+must follow a normal distribution. Likelihood is an alternative of NLS
+for estimating parameters of generalised linear models which is
+therefore a different model that does not follow the same assumptions as
+NLS, like the data model does not follow a normal distribution.</p>
 </blockquote>
 <p><br></p>
 </div>
